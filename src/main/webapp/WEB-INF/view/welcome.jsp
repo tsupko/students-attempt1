@@ -13,5 +13,6 @@
 </head>
 <body>
 <a href="${pageContext.request.contextPath}/list">List</a>
+<a href="${pageContext.request.contextPath}/add">Add</a>
 </body>
 </html>

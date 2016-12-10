@@ -24,6 +24,7 @@ public class StudentDAOImpl implements StudentDao {
         this.dbService = dbService;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Student> findAll() {
         EntityManager entityManager = dbService.getEntityManagerFactory().createEntityManager();
