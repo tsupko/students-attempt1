@@ -6,4 +6,12 @@
     <import resource="/WEB-INF/spring/mvc.xml"/>
     <import resource="/WEB-INF/spring/security.xml"/>
 
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="h2"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
 </beans>

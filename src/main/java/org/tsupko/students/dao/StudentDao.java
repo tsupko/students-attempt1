@@ -10,4 +10,8 @@ import java.util.List;
  */
 public interface StudentDao {
     List<Student> findAll();
+
+    Student getById(Long id);
+
+    void saveOrUpdate(Student student);
 }
