@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Waylesange
@@ -11,6 +12,6 @@
     <title>Welcome</title>
 </head>
 <body>
-Welcome!
+<a href="${pageContext.request.contextPath}/list">List</a>
 </body>
 </html>
