@@ -13,5 +13,7 @@ public interface StudentDao {
 
     Student getById(Long id);
 
-    void saveOrUpdate(Student student);
+    void save(Student student);
+
+    void update(Student student);
 }

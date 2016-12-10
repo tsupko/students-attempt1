@@ -45,8 +45,17 @@ public class StudentDAOImpl implements StudentDao {
         return student;
     }
 
-    @Override
-    public void saveOrUpdate(Student student) {
+    public void save(Student student) {
+        EntityManager entityManager = dbService.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
 
+        entityManager.merge(student);
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public void update(Student student) {
+        save(student);
     }
 }

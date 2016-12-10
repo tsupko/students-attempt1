@@ -41,5 +41,11 @@ public class DBService {
         this.entityManagerFactory = entityManagerFactory;
     }
 
-
+    public void saveOrUpdate(Student student) {
+        if (student.getId() == null) {
+            studentDao.save(student);
+        } else {
+            studentDao.update(student);
+        }
+    }
 }
