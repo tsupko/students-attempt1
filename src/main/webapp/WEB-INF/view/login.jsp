@@ -13,21 +13,19 @@
     <title>Login</title>
 </head>
 <body>
-<form style="border: 0px solid; padding: 0; margin: 0;" id="loginForm" action="${contextPath}/j_spring_security_check"
-      method="post"  enctype="text/plain">
-    <input id="action" type="hidden" name="action" value="j_spring_security_check">
+<form style="border: 0px solid; padding: 0; margin: 0;" method="post">
     <table>
         <tr>
             <td>Login:</td>
-            <td><input id="j_username" type="text" name="j_username" size="15"></td>
+            <td><input ype="text" name="username" size="15"></td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td><input id="j_password" type="text" name="j_password" size="15"><br/></td>
+            <td><input type="password" name="password" size="15"><br/></td>
         </tr>
         <tr>
             <td></td>
-            <td><input id="submit" type="submit" value="Sign in"></td>
+            <td><input type="submit" value="Sign in"></td>
         </tr>
     </table>
 </form>
