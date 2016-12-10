@@ -16,4 +16,14 @@ public class StudentController {
         model.addAttribute("username", "Alex");
         return "login";
     }
+
+    @RequestMapping("/welcome")
+    public String getWelcomePage() {
+        return "welcome";
+    }
+
+    @RequestMapping("/admin")
+    public String getAdminPage() {
+        return "admin";
+    }
 }
