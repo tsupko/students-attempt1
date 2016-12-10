@@ -4,14 +4,12 @@ import javax.persistence.*;
 
 /**
  * @author Alexander Tsupko (tsupko.alexander@yandex.ru)
- * @author Bagdat Bimaganetov
+ * @author Bagdat Bimaganbetov
  *         Copyright (c) 2016. All rights reserved.
  */
 @Entity
 public class Student {
-
     private long version = 1L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
