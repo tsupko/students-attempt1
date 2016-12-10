@@ -26,4 +26,5 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.5.Final'
     compile group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.2.5.Final'
     compile group: 'org.springframework', name: 'spring-orm', version: '4.3.4.RELEASE'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.193'
 }
