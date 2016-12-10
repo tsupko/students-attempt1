@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.tsupko.students.dao.StudentDao;
 import org.tsupko.students.entity.Student;
 
+import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 /**
@@ -13,10 +14,38 @@ import java.util.List;
  */
 @Service
 public class DBService {
-    @Autowired
+
     private StudentDao studentDao;
+
+    private EntityManagerFactory entityManagerFactory;
 
     public List<Student> getAllStudents() {
         return studentDao.findAll();
+    }
+
+    public Student getById(Long id) {
+        return studentDao.getById(id);
+    }
+
+    public EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
+    }
+
+    @Autowired
+    public void setStudentDao(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+
+    @Autowired
+    public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
+        this.entityManagerFactory = entityManagerFactory;
+    }
+
+    public void saveOrUpdate(Student student) {
+        if (student.getId() == null) {
+            studentDao.save(student);
+        } else {
+            studentDao.update(student);
+        }
     }
 }

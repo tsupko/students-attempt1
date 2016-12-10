@@ -6,7 +6,6 @@ import org.tsupko.students.entity.Student;
 import org.tsupko.students.service.DBService;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 /**
@@ -34,5 +33,29 @@ public class StudentDAOImpl implements StudentDao {
         entityManager.close();
 
         return users;
+    }
+
+    @Override
+    public Student getById(Long id) {
+        EntityManager entityManager = dbService.getEntityManagerFactory().createEntityManager();
+        Student student = entityManager.find(Student.class, id);
+
+        entityManager.close();
+
+        return student;
+    }
+
+    public void save(Student student) {
+        EntityManager entityManager = dbService.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.merge(student);
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public void update(Student student) {
+        save(student);
     }
 }
